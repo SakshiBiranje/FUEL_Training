@@ -1,0 +1,31 @@
+CREATE DATABASE HotelManagement_system;
+
+USE HotelManagement_system;
+
+CREATE TABLE customers (
+    sr_no INT,
+    customerName VARCHAR(50),
+    BillAmount DECIMAL(10,2),
+    Food_order VARCHAR(50)
+);
+
+INSERT INTO customers VALUES (1,'Akash',500,'Pizza');
+INSERT INTO customers VALUES (2,'Deepak',700,'Burger');
+INSERT INTO customers VALUES (3,'Rohit',650,'Pasta');
+INSERT INTO customers VALUES (4,'Amit',800,'Biryani');
+INSERT INTO customers VALUES (5,'Neha',450,'Sandwich');
+
+ALTER TABLE customers ADD Token_no INT;
+
+UPDATE customers SET Token_no=101 WHERE customerName='Akash';
+UPDATE customers SET Token_no=102 WHERE customerName='Deepak';
+UPDATE customers SET Token_no=103 WHERE customerName='Rohit';
+UPDATE customers SET Token_no=104 WHERE customerName='Amit';
+UPDATE customers SET Token_no=105 WHERE customerName='Neha';
+
+ALTER TABLE customers DROP COLUMN sr_no;
+
+DELETE FROM customers WHERE customerName='Deepak';
+DELETE FROM customers WHERE customerName='Amit';
+
+SELECT * FROM customers;
